@@ -1,15 +1,18 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 
 interface NavbarProps {
   onNav: (page: string) => void;
   currentPage: string;
 }
 
+import logo from './assets/logo.png';
+
 const Navbar: React.FC<NavbarProps> = ({ onNav, currentPage }) => (
   <AppBar position="static">
     <Toolbar>
-      <Typography variant="h6" sx={{ flexGrow: 1 }}>
+      <img src={logo} alt="Reflexcel Logo" style={{ height: 40, marginRight: 16 }} />
+      <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
         Sudoku Reflexcel
       </Typography>
       <Button color="inherit" onClick={() => onNav('home')} disabled={currentPage === 'home'}>
