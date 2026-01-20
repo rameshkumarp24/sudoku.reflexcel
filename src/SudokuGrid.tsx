@@ -18,11 +18,7 @@ const SudokuGrid: React.FC<SudokuGridProps> = ({ board, errors, onChange, readOn
       justifyContent: 'center',
       alignItems: 'center',
       width: '100%',
-      height: 600,
-      minHeight: 600,
-      minWidth: 600,
-      maxWidth: 600,
-      maxHeight: 600,
+      // No fixed height, let content grow
     }}
   >
     <Box
@@ -33,12 +29,8 @@ const SudokuGrid: React.FC<SudokuGridProps> = ({ board, errors, onChange, readOn
         boxShadow: 3,
         p: 2,
         width: cellSize * 9,
-        height: cellSize * 9,
-        minWidth: cellSize * 9,
-        minHeight: cellSize * 9,
-        maxWidth: cellSize * 9,
-        maxHeight: cellSize * 9,
         margin: 'auto',
+        overflow: 'visible',
       }}
     >
       <Box
@@ -48,7 +40,6 @@ const SudokuGrid: React.FC<SudokuGridProps> = ({ board, errors, onChange, readOn
           gridTemplateRows: `repeat(9, ${cellSize}px)`,
           gap: 0,
           width: cellSize * 9,
-          height: cellSize * 9,
         }}
       >
         {board.map((row, i) =>

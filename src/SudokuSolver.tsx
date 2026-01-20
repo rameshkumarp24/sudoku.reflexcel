@@ -94,9 +94,9 @@ const SudokuSolver: React.FC = () => {
       </Box>
       {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
       {solution && (
-        <Box mt={2} sx={{ maxHeight: 340, overflowY: 'auto', width: '100%' }}>
+        <Box mt={2} sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', overflow: 'visible' }}>
           <Typography variant="h6">Solution:</Typography>
-          <Paper sx={{ p: 2, display: 'inline-block', maxHeight: 320, overflowY: 'auto' }}>
+          <Paper sx={{ p: 2, display: 'inline-block', bgcolor: '#f7f8fa', boxShadow: 3, borderRadius: 3, overflow: 'visible' }}>
             <SudokuGrid board={solution.map(row => row.map(cell => cell.toString()))} readOnly />
           </Paper>
         </Box>

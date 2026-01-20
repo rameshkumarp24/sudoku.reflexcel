@@ -24,34 +24,43 @@ function App() {
   return (
     <>
       <Navbar onNav={setPage} currentPage={page} />
-      <Container
-        maxWidth={false}
-        disableGutters
+      <Box
         sx={{
-          width: 700,
-          height: 900,
-          minWidth: 700,
-          minHeight: 900,
-          maxWidth: 700,
-          maxHeight: 900,
+          minHeight: '100vh',
+          minWidth: '100vw',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'flex-start',
-          margin: '32px auto 0 auto',
-          boxShadow: 6,
-          borderRadius: 4,
-          background: '#fff',
-          overflow: 'hidden',
+          justifyContent: 'center',
+          bgcolor: '#f7f8fa',
         }}
       >
-        {page === 'home' && <Home />}
-        {page === 'generate' && <SudokuGenerator />}
-        {page === 'solve' && <SudokuSolver />}
-        {page === 'about' && <About />}
-        {page === 'help' && <Help />}
-        <Box sx={{ mt: 'auto', width: '100%' }}><Footer /></Box>
-      </Container>
+        <Container
+          maxWidth={false}
+          disableGutters
+          sx={{
+            width: 700,
+            minWidth: 700,
+            maxWidth: 700,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: 6,
+            borderRadius: 4,
+            background: '#fff',
+            overflow: 'visible',
+            p: 0,
+          }}
+        >
+          {page === 'home' && <Home />}
+          {page === 'generate' && <SudokuGenerator />}
+          {page === 'solve' && <SudokuSolver />}
+          {page === 'about' && <About />}
+          {page === 'help' && <Help />}
+          <Box sx={{ mt: 'auto', width: '100%' }}><Footer /></Box>
+        </Container>
+      </Box>
     </>
   );
 }
