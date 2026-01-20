@@ -21,6 +21,12 @@ const Navbar: React.FC<NavbarProps> = ({ onNav, currentPage }) => (
       <Button color="inherit" onClick={() => onNav('solve')} disabled={currentPage === 'solve'}>
         Solve
       </Button>
+      <Button color="inherit" onClick={() => onNav('about')} disabled={currentPage === 'about'}>
+        About
+      </Button>
+      <Button color="inherit" onClick={() => onNav('help')} disabled={currentPage === 'help'}>
+        Help
+      </Button>
     </Toolbar>
   </AppBar>
 );

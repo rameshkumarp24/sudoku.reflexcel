@@ -1,9 +1,13 @@
 
 import React, { useState } from 'react';
 import { Container, Box } from '@mui/material';
+
 import Navbar from './Navbar';
 import SudokuGenerator from './SudokuGenerator';
 import SudokuSolver from './SudokuSolver';
+import About from './About';
+import Help from './Help';
+import Footer from './Footer';
 
 const Home: React.FC = () => (
   <Box mt={4}>
@@ -24,7 +28,10 @@ function App() {
         {page === 'home' && <Home />}
         {page === 'generate' && <SudokuGenerator />}
         {page === 'solve' && <SudokuSolver />}
+        {page === 'about' && <About />}
+        {page === 'help' && <Help />}
       </Container>
+      <Footer />
     </>
   );
 }
