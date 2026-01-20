@@ -24,14 +24,34 @@ function App() {
   return (
     <>
       <Navbar onNav={setPage} currentPage={page} />
-      <Container maxWidth="md">
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={{
+          width: 700,
+          height: 900,
+          minWidth: 700,
+          minHeight: 900,
+          maxWidth: 700,
+          maxHeight: 900,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          margin: '32px auto 0 auto',
+          boxShadow: 6,
+          borderRadius: 4,
+          background: '#fff',
+          overflow: 'hidden',
+        }}
+      >
         {page === 'home' && <Home />}
         {page === 'generate' && <SudokuGenerator />}
         {page === 'solve' && <SudokuSolver />}
         {page === 'about' && <About />}
         {page === 'help' && <Help />}
+        <Box sx={{ mt: 'auto', width: '100%' }}><Footer /></Box>
       </Container>
-      <Footer />
     </>
   );
 }

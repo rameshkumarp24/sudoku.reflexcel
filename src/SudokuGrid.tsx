@@ -10,7 +10,7 @@ export interface SudokuGridProps {
 
 
 
-const cellSize = 48;
+const cellSize = 56;
 const SudokuGrid: React.FC<SudokuGridProps> = ({ board, errors, onChange, readOnly }) => (
   <Box
     sx={{
@@ -18,7 +18,11 @@ const SudokuGrid: React.FC<SudokuGridProps> = ({ board, errors, onChange, readOn
       justifyContent: 'center',
       alignItems: 'center',
       width: '100%',
-      minHeight: '60vh',
+      height: 600,
+      minHeight: 600,
+      minWidth: 600,
+      maxWidth: 600,
+      maxHeight: 600,
     }}
   >
     <Box
@@ -28,8 +32,12 @@ const SudokuGrid: React.FC<SudokuGridProps> = ({ board, errors, onChange, readOn
         background: '#fff',
         boxShadow: 3,
         p: 2,
-        width: cellSize * 9 + 16,
-        maxWidth: '98vw',
+        width: cellSize * 9,
+        height: cellSize * 9,
+        minWidth: cellSize * 9,
+        minHeight: cellSize * 9,
+        maxWidth: cellSize * 9,
+        maxHeight: cellSize * 9,
         margin: 'auto',
       }}
     >
@@ -39,6 +47,8 @@ const SudokuGrid: React.FC<SudokuGridProps> = ({ board, errors, onChange, readOn
           gridTemplateColumns: `repeat(9, ${cellSize}px)`,
           gridTemplateRows: `repeat(9, ${cellSize}px)`,
           gap: 0,
+          width: cellSize * 9,
+          height: cellSize * 9,
         }}
       >
         {board.map((row, i) =>
