@@ -16,9 +16,10 @@ import Footer from './Footer';
 
 
 
+
 import logo from './assets/logo.png';
 
-const Home: React.FC = () => (
+const Home: React.FC<{ onPlay: () => void; onLearn: () => void }> = ({ onPlay, onLearn }) => (
   <Box mt={6} sx={{ textAlign: 'center', px: 4 }}>
     <img src={logo} alt="Sudoku Reflexcel Logo" style={{ height: 80, marginBottom: 16 }} />
     <h1 style={{ fontWeight: 800, fontSize: '2.8em', marginBottom: 8, color: '#1a6ed8', letterSpacing: 1 }}>World Class Sudoku</h1>
@@ -27,11 +28,12 @@ const Home: React.FC = () => (
       Daily challenges, leaderboards, tutorials, and more. Join millions of players worldwide!
     </p>
     <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 4 }}>
-      <button style={{ fontSize: '1.1em', padding: '0.8em 2em', background: '#1a6ed8', color: '#fff', border: 'none', borderRadius: 8, fontWeight: 700, cursor: 'pointer', boxShadow: '0 2px 8px #1a6ed822' }} onClick={() => window.scrollTo({ top: 400, behavior: 'smooth' })}>Play Now</button>
-      <button style={{ fontSize: '1.1em', padding: '0.8em 2em', background: '#fff', color: '#1a6ed8', border: '2px solid #1a6ed8', borderRadius: 8, fontWeight: 700, cursor: 'pointer', boxShadow: '0 2px 8px #1a6ed822' }} onClick={() => window.scrollTo({ top: 800, behavior: 'smooth' })}>Learn Sudoku</button>
+      <button style={{ fontSize: '1.1em', padding: '0.8em 2em', background: '#1a6ed8', color: '#fff', border: 'none', borderRadius: 8, fontWeight: 700, cursor: 'pointer', boxShadow: '0 2px 8px #1a6ed822' }} onClick={onPlay}>Play Now</button>
+      <button style={{ fontSize: '1.1em', padding: '0.8em 2em', background: '#fff', color: '#1a6ed8', border: '2px solid #1a6ed8', borderRadius: 8, fontWeight: 700, cursor: 'pointer', boxShadow: '0 2px 8px #1a6ed822' }} onClick={onLearn}>Learn Sudoku</button>
     </Box>
   </Box>
 );
+
 
 
 function App() {
@@ -70,7 +72,7 @@ function App() {
             mt: 4,
           }}
         >
-          {page === 'home' && <Home />}
+          {page === 'home' && <Home onPlay={() => setPage('generate')} onLearn={() => setPage('tutorial')} />}
           {page === 'daily' && <DailyChallenge />}
           {page === 'leaderboard' && <Leaderboard />}
           {page === 'profile' && <Profile />}
