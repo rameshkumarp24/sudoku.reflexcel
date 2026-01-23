@@ -50,12 +50,12 @@ function generateDailyPuzzle(difficulty: string, seed: string) {
   return board;
 }
 
-const emptyBoard = () => Array(9).fill('').map(() => Array(9).fill(''));
+
 
 const DailyChallenge: React.FC = () => {
   const seed = getTodaySeed();
   const initialPuzzle = generateDailyPuzzle('medium', seed);
-  const [puzzle, setPuzzle] = useState<number[][] | null>(initialPuzzle);
+  const [puzzle] = useState<number[][] | null>(initialPuzzle);
   const [userBoard, setUserBoard] = useState<string[][]>(initialPuzzle.map(row => row.map(cell => (cell === 0 ? '' : cell.toString()))));
   const [errors, setErrors] = useState<boolean[][]>(Array(9).fill(0).map(() => Array(9).fill(false)));
   const [message, setMessage] = useState('');
