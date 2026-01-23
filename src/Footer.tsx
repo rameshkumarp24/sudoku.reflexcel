@@ -7,9 +7,7 @@ const Footer: React.FC = () => (
     <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 700 }}>
       © 2026 Sudoku Reflexcel &nbsp;|&nbsp;
       <Link href="https://github.com/rameshkumarp24/sudoku.reflexcel" target="_blank" rel="noopener" sx={{ color: '#1a6ed8', fontWeight: 700 }}>GitHub</Link>
-      &nbsp;|&nbsp;
-      <Link href="https://sudoku.com/" target="_blank" rel="noopener" sx={{ color: '#8e2de2', fontWeight: 700 }}>Compare: sudoku.com</Link>
-    </Typography>
+      </Typography>
     <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
       Made with ❤️ for Sudoku fans worldwide. Join millions of players!
     </Typography>
